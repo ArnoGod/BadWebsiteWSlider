@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy</title>
+</head>
+<style>
+    html {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #ffbd6b;
+    }
+    .roundBox {
+    border-radius: 15%;
+    align-items: center;
+    padding: 5vh;
+    background-color: #eaefea;
+    width: 10vw;
+    height: 10vh;
+    }
+</style>
+<body>
+    <input type="range" min="0" max="100" id="vHeight">
+    <input type="range" min="0" max="100" id="vWidth">
+    <div class="roundBox" id="moveBox" style="position: relative; left: 50vw; top: 50vh;">
+        <p id="p1">X is; 50</p>
+        <p id="p2">Y is; 50</p>
+    </div>
+
+    <script>
+        let vw = document.getElementById("vWidth")
+        let vh = document.getElementById("vHeight")
+        let Box = document.getElementById("moveBox")
+        let p1 = document.getElementById("p1")
+        let p2 = document.getElementById("p2")
+
+        vw.addEventListener("input", function() {
+            Box.style.left = vw.value + "vw";
+            p1.innerText = "X is; " + vw.value;
+        });
+        vh.addEventListener("input", function() {
+            Box.style.top = vh.value + "vh";
+            p2.innerText = "Y is; " + vh.value;
+        });
+    </script>
+    
+</body>
+</html>
